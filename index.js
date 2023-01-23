@@ -1,10 +1,12 @@
+//NOTE: Importing Packages and Files
 const express = require("express");
 const usersRoutes = require("./src/routes/users");
 const middlewareLogRequest = require("./src/middleware/logs");
-//
+
+// NOTE: Create Express App
 const app = express();
-// NOTE: Middleware
 app.use(middlewareLogRequest);
+app.use(express.json());
 
 // NOTE: Routes
 app.use("/users", usersRoutes);
